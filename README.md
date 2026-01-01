@@ -6,6 +6,7 @@ A simple chess game implemented in Java using a graphical user interface. This w
 
 ### Graphical Display
 Uses JPanel to make a game window that is interactable with the user. The actual pieces being shown are custom made 8-bit.
+
 ![Game start](screenshots/initial_position.png)
 
 ### Display possible moves
