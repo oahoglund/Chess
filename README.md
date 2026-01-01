@@ -1,56 +1,59 @@
 # Chess
 
-A simple chess game implemented in Java using a graphical user interface. This was made when I was learning java in order improve my abilities.
+A fully playable chess game implemented in Java with a custom Swing-based graphical user interface.  
+The project focuses on correct chess rules, legal move validation, and interactive gameplay.
 
-## Features:
+## Features
+- Interactive GUI built using Java Swing (`JPanel`)
+- Full legal move generation and validation
+- Detection of check and checkmate states
+- Visual highlighting of legal moves
+- Support for advanced chess rules:
+  - Castling (king-side and queen-side)
+  - En passant
+  - Pawn promotion (currently defaults to queen)
 
-### Graphical Display
-Uses JPanel to make a game window that is interactable with the user. The actual pieces being shown are custom made 8-bit.
+## Screenshots
 
-![Game start](screenshots/initial_position.png)
+### Initial position
+![Initial board](screenshots/initial_position.png)
 
-### Display possible moves
-When selecting a piece it will only be shown what legal moves it can do as indicated by the green circles. Clicking on other parts of the board will deselect the piece. Under you can see the moves that the white queen can do.
+### Legal move highlighting
+Selecting a piece highlights all legal moves while excluding moves that would leave the king in check.
 
-![Smart move](screenshots/posible_moves.png)
+![Legal moves](screenshots/posible_moves.png)
 
-### Detect illegal moves
-The program will detect any move that would put the king in check and not show them. This can be seen under where the king cant move left because of the queen blocking. It will also find any eventual discovered checks.
+### Illegal move detection
+Moves that would result in check (including discovered checks) are excluded from the move set. (Under you see the possible moves for the black king)
 
-![Illegal move](screenshots/illegal_moves.png)
+![Illegal moves](screenshots/illegal_moves.png)
 
-### Advanced chess moves
-
-#### Double pawn move
-I will not show a scree shot specifically for this as one can see it in a lot of the other screenshots.
-
-#### En passant
-To punish any pesky pawns trying to run away one can do an en passant as shown under:
+### En passant
+Implements en passant captures immediately following a valid double pawn advance.
 
 ![En passant](screenshots/en_passant.png)
 
-#### Promotion
-Currently all pawns that make it the the last row will promote to queens only, this may be changed in a future version.
+### Castling
+Both king-side and queen-side castling are supported and validated according to chess rules.
 
-#### Castling
-Both long and short castling is aviable. It is checked if it is legal first, so if for example the oposing queen is blocking the castling it cant be done. It will also check if the king or rook have already moved. An example of a succesfull castling is shown under:
+![Castling step 1](screenshots/castling_1.png)
 
-![Castle1](screenshots/castling_1.png)
-![Castle2](screenshots/castling_2.png)
+![Castling step 2](screenshots/castling_2.png)
 
-### Check Mate detection
-The program will always check for checkmates. When it does it will show a check mate graphic. (In order to play again one has to close and open the program again)
+### Checkmate detection
+The game detects checkmate and displays a game-over screen when the game ends. (In order to reset one has to close then open the program)
 
 ![Checkmate](screenshots/chechmate.png)
 
 ## Requirements
-- Java JDK 17 (or the version you are using)
+- Java JDK 17 (or compatible version)
 - No global Gradle installation required (Gradle Wrapper included)
 
 ## Project Structure
 - `src/` – Java source code
-- `res/` – Game resources (piece images, etc.)
+- `res/` – Game resources (piece sprites, assets)
 - `build.gradle` – Gradle build configuration
+- `screenshots/` – Screenshots used in this README
 
 ## Build
 To compile the project, run:
